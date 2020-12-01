@@ -1,0 +1,29 @@
+DSA Lab Assignment Set – I
+1. Write a program to compute the factorial of an integer n iteratively and recursively. Check when there
+is overflow in the result and change the data types for accommodating higher values of inputs.
+
+2. Write a program to generate the nth Fibonacci number iteratively and recursively. Check when there is
+overflow in the result and change the data types for accommodating higher values of inputs. Plot the
+Fibonacci number vs n graph.
+
+3. Write programs for linear search and binary search for searching integers, floating point numbers and
+words in arrays of respective types.
+
+4. Write a program to generate 1,00,000 random integers between 1 and 1,00,000 without repetitions and
+store them in a file in character mode one number per line. Study and use the functions in C related to
+random numbers.
+
+5. Write a program to generate 1,00,000 random strings of capital letters of length 10 each, without
+repetitions and store them in a file in character mode one string per line.
+
+6. Store the names of your classmates according to roll numbers in a text file one name per line. Write a
+program to find out from the file, the smallest and largest names and their lengths in number of
+characters. Write a function to sort the names alphabetically and store in a second file.
+
+7. Take a four-digit prime number P. Generate a series of large integers L and for each member Li
+compute the remainder Ri after dividing Li by P. Tabulate Li and Ri. Repeat for seven other four digit
+prime numbers keeping Li fixed.
+
+8. Convert your Name and Surname into large integers by juxtaposing integer ASCII codes for alphabet.
+Print the corresponding converted integer. Cut the large integers into two halves and add the two halves.
+Compute the remainder after dividing the by the prime numbers P in problem 7. 
