@@ -13,19 +13,22 @@ void generate(uss li[],int n){
     
 }
 
-void rem(ld ri[],uss li[],int n,uss prime){
+void rem(uss ri[],uss li[],int n,uss prime){
     for(int i=0;i<n;i++){
-        ri[i]=(li[i] % prime);
-        printf("%Lf ",ri[i]);
+        ri[i]=li[i] % prime;
+        //printf("%llu ",prime);
+        //printf(" %Lf ",ri[i]);
+        //printf("%llu ",li[i]);
+        //printf("%llu   \n",li[i]%prime);
     }
 }
 
-void show(uss li[],ld ri[],int n){
-    for(int i=0;i<n;i++)
-    printf("%llu ",li[i]);
-    printf("\n");
-    for(int i=0;i<n;i++)
-    printf("%Lf ",ri[i]);
+void show(uss li[],uss ri[],int n){
+    printf("    Li             Ri\n");
+    printf("__________________________\n");
+    for(int i=0;i<n;i++){
+        printf("%llu             %llu\n",li[i],ri[i]);
+    }
 }
 
 void main(){
@@ -35,10 +38,10 @@ void main(){
     scanf("%d",&n);
     // printf("Enter Prime number to divide ");
     // scanf("%d",&prime);
-    uss li[100];
-    ld ri[100];
+    uss li[100], ri[100];
     generate(li,n);
     rem(ri,li,n,prime);
-    //show(li,ri,n);
+    //printf("%llu",li[0]);
+    show(li,ri,n);
 
 }
