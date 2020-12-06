@@ -1,0 +1,9 @@
+Name    Roll no.    Class   BCSE II Sem First Session 2020-21
+Assignment Set
+Problem No.
+Problem Statement
+Solution Approach
+Structured Pseudocode
+Results
+Discussion
+Separate files containing commented source code

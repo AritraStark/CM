@@ -1,61 +1,75 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include<time.h>
 
 typedef long int li;
 
-void randomtrick(li arr[]){
+void randomtrick(li arr[])
+{
 
-    for(li i=0;i<100000;i++)
-    arr[i]=i+1;
-    for (li i = 0; i < 100000; i++) {    
-    li temp = arr[i];
-    li randomIndex = rand() % 100000;
-    arr[i] = arr[randomIndex];
-    arr[randomIndex] = temp;
-    }
-    for(li i=0;i<100000;i++)
-    printf(" %li",arr[i]);
+li i;
+//Assigning sequential numbers to array.
+for(i =0;i<100000;i++)
+{
+arr[i] = i + 1;
+}
+//Randomizing the array contents.
+for(i=0;i<100000;i++)
+{
+li temp = arr[i];
+li randomindex = rand()%100000;
+arr[i] = arr[randomindex];
+arr[randomindex] = temp;
+}
+}
+/*
+for(li i = 0;i<100000;i++)
+{
+printf("%li",arr[i]);
+}
+}
+*/
+
+void writefile(FILE *fpw,li arr[])
+{
+fpw = fopen("data.txt","a");
+//Writing array content to file.
+for(li i=0;i<100000;i++)
+{
+fprintf(fpw,"%ld\n",arr[i]);
 }
 
-void writefile(FILE *fpw,li arr[]){
-    fpw=fopen("data.txt","w");
-    char s = arr[0]+'0';
-    printf("%c",s);
-    fputs(&s,fpw);
-    fputs("\n",fpw);
-    fclose(fpw);
+fclose(fpw);
 }
 
-void appendfile(FILE *fpw,li arr[]){
-    fpw = fopen("data.txt","a");
-    for(int i=1;i<100000;i++){
-        char s = arr[i]+'0';
-        printf("%c",s);
-        fputs(&s,fpw);
-        fputs("\n",fpw);
-    }
-    fclose(fpw);
+/*
+void appendfile(FILE *fpw,li arr[])
+{
+fpw = fopen("data.txt","a");
+for(int i=0;i<100000;i++)
+{
+char s=arr[i] + '0';
+printf("%c",s);
+fputs(&s,fpw);
+fputs("\n",fpw);
 }
+fclose(fpw);
+}
+*/
 
 void main()
 {
-	// srand(time(0));
 
-	// for(li i = 0; i<10; i++)
-	// 	prlif(" %d ", (rand()%10));
-    li arr[100];
-    randomtrick(arr);
-    char s[50];
-    FILE *fpr,*fpw; 
-    fpr = fopen("data.txt","r");
-    fgets(s,50,fpr);
-    if(s!=NULL)
-    writefile(fpw,arr);
-    else
-    appendfile(fpw,arr);
-    fclose(fpr);
+//Variables declared
+FILE *fpw;
+li i;
+li arr[100000];
 
-    
+//Executing functions
+randomtrick(arr);
+
+writefile(fpw,arr);
+
+//Close-up
+fclose(fpw);
 }
