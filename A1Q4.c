@@ -6,21 +6,18 @@ typedef long int li;
 
 void randomtrick(li arr[])
 {
-
-li i;
-//Assigning sequential numbers to array.
-for(i =0;i<100000;i++)
-{
-arr[i] = i + 1;
-}
-//Randomizing the array contents.
-for(i=0;i<100000;i++)
-{
-li temp = arr[i];
-li randomindex = rand()%100000;
-arr[i] = arr[randomindex];
-arr[randomindex] = temp;
-}
+    li i;
+    //Assigning sequential numbers to array.
+    for(i =0;i<100000;i++)
+        arr[i] = i + 1;
+    //Randomizing the array contents.
+    for(i=0;i<100000;i++)
+    {
+        li temp = arr[i];
+        li randomindex = rand()%100000;
+        arr[i] = arr[randomindex];
+        arr[randomindex] = temp;
+    }
 }
 /*
 for(li i = 0;i<100000;i++)
@@ -32,14 +29,12 @@ printf("%li",arr[i]);
 
 void writefile(FILE *fpw,li arr[])
 {
-fpw = fopen("data.txt","a");
-//Writing array content to file.
-for(li i=0;i<100000;i++)
-{
-fprintf(fpw,"%ld\n",arr[i]);
-}
-
-fclose(fpw);
+    fpw = fopen("data.txt","a");
+    //Writing array content to file.
+    for(li i=0;i<100000;i++)
+    fprintf(fpw,"%ld\n",arr[i]);
+    //Closing filestream
+    fclose(fpw);
 }
 
 /*
