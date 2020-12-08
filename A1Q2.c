@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 
 typedef unsigned long long int uss;
 

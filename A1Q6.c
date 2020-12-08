@@ -55,13 +55,14 @@ void find(int n,struct Student arr[]){
             max=i;
             mx=len1;
         }
-        //finding index of shortest name
-        if(len2<mx)
+        if(len2<mn)
         {
             min=i;
             mn=len2;
         }
+        
     }
+            
     printf("\nThe largest name is %s of length %d",arr[max].name,strlen(arr[max].name));
     printf("\nThe smallest name is %s of length %d",arr[min].name,strlen(arr[min].name));
 }

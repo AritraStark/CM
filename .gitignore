@@ -7,6 +7,10 @@
 *.obj
 *.elf
 
+# Text
+*.txt
+*.docx
+
 # Linker output
 *.ilk
 *.map

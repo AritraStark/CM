@@ -1,25 +1,33 @@
 #include <stdio.h>
-#include <conio.h>
 
 typedef unsigned long long int uss;
 
-void fac(int *n,uss *res){
-//void fac(int *n,int *res){
-    for(int i=1;i<=*n;i++)
-    (*res)*=i;
+uss facrec(int n) {
+    //Recursive function
+    if (n>=1)
+        return n*facrec(n-1);
+    else
+        return 1;
+}
+
+uss faciter(int n){
+    //Iterative function
+    uss res=1;
+    for(int i=1;i<n;i++)
+    res*=i;
+    return res;
 }
 
 void main(){
-    //int n,res=1;
     //Integer starts giving wrong answer at 15
     int n;
-    uss res=1;
     printf("Enter number to calculate: ");
     scanf("%d",&n);
+
     if(n>1){
-        fac(&n,&res);
-        //printf("The result is : %d", res);
-        printf("The result is : %llu", res);
+        //The result showing for different functions
+        printf("The recursive result is : %llu", facrec(n));
+        printf("The iterative result is : %llu", faciter(n));
     }
     else if(n<0)
     printf("Invalid input");
